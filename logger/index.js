@@ -39,7 +39,7 @@ function tick() {
         isDoorOpen,
         timestamp: new Date().toISOString(),
       }
-
+      console.log('Data: ', data)
       const options = {
         method: 'POST',
         body: JSON.stringify(data),
