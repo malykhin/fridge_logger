@@ -1,5 +1,6 @@
 module.exports = {
-  DOOR_SENSOR_PIN: 11,
-  INTERVAL: 3000,
-  REPORT_URL: 'http://192.168.1.23:3000',
+  doorSensorPin: 11,
+  interval: 3000,
+  mqttHost: 'mqtt://104.248.22.182:1883',
+  mqttTopic: '/fridge',
 }

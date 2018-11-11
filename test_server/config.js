@@ -1,4 +1,5 @@
 module.exports = {
-  port: 3000,
+  mqttHost: 'mqtt://localhost:1883',
+  mqttTopic: '/fridge',
   dataPath: './data',
 }
