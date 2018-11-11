@@ -40,7 +40,9 @@ function tick() {
       const data = {
         temp,
         isDoorOpen,
-        timestamp: `${date.getFullYear()}-${date.getMonth()}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`,
+        timestamp: `${date.getFullYear()}-${date.getMonth()}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${
+          date.getSeconds() < 10 ? `0${date.getSeconds()}` : date.getSeconds()
+        }`,
       }
       console.log('Data: ', data)
       client.publish(config.mqttTopic, JSON.stringify(data))

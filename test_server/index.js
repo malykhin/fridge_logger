@@ -9,14 +9,14 @@ const config = require('./config')
 const filename = `${new Date().toISOString()}.csv`
 const filePath = path.join(__dirname, config.dataPath, filename)
 
-const headers = 'timestamp, temperature, is_door_open,\n'
+const headers = 'timestamp,temperature,is_door_open\n'
 fs.writeFileSync(filePath, headers, { flag: 'a' })
 
 const addToDataframe = ({ temp, isDoorOpen, timestamp }) => {
   if (typeof temp === 'undefined' || typeof isDoorOpen === 'undefined' || typeof timestamp === 'undefined') {
     throw new Error('ValidationError')
   }
-  const data = `${timestamp}, ${temp}, ${isDoorOpen},\n`
+  const data = `${timestamp},${temp},${isDoorOpen}\n`
 
   fs.writeFile(filePath, data, { flag: 'a' }, (error) => {
     if (error) {
